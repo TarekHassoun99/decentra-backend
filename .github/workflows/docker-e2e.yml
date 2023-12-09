@@ -1,14 +1,14 @@
-name: NestJS API CI
+name: Docker E2E Tests
 
 on:
   push:
-    branches: [main]
+    branches: [dev]
   pull_request:
-    branches: [main]
+    branches: [dev]
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
+  e2e-tests:
+    runs-on: ubuntu-20.04  # Specify a specific version of Ubuntu
 
     steps:
       - uses: actions/checkout@v3
