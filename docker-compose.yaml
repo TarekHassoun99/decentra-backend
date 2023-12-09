@@ -35,3 +35,7 @@ services:
       dockerfile: Dockerfile
     ports:
       - ${APP_PORT}:${APP_PORT}
+
+  test:
+    environment:
+      - DOCKER_ENV=true
