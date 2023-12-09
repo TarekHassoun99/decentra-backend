@@ -7,11 +7,10 @@ on:
     branches: [dev]
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
+  e2e-tests:
+    runs-on: ubuntu-latest  # Specify a specific version of Ubuntu
 
     steps:
       - uses: actions/checkout@v3
       - name: Run e2e tests
         run: docker compose -f docker-compose.ci.yaml --env-file env-example -p ci up --build --exit-code-from api
-
